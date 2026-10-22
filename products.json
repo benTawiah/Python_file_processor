@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Book",
+        "price": 6.0,
+        "stock": 12
+    },
+    {
+        "name": "book",
+        "price": 5.7,
+        "stock": 8
+    },
+    {
+        "name": "pen",
+        "price": 4.7,
+        "stock": 9
+    }
+]

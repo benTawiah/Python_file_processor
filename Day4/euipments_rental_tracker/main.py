@@ -6,7 +6,7 @@ coll_equip = collect_equipments()
 content_load = load_content()
 content_load.extend(coll_equip)
 
-save_content(coll_equip)
+save_content(content_load)
 
 
 for equipment in coll_equip:

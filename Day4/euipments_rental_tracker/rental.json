@@ -8,5 +8,20 @@
         "name": "speaker",
         "rate": 6.0,
         "unit": 8
+    },
+    {
+        "name": "hj",
+        "rate": 8.0,
+        "unit": 90
+    },
+    {
+        "name": "87",
+        "rate": 8.0,
+        "unit": 9
+    },
+    {
+        "name": "tic",
+        "rate": 9.0,
+        "unit": 89
     }
 ]

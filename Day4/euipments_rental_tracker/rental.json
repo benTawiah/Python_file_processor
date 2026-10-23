@@ -1,0 +1,12 @@
+[
+    {
+        "name": "mic",
+        "rate": 8.0,
+        "unit": 9
+    },
+    {
+        "name": "speaker",
+        "rate": 6.0,
+        "unit": 8
+    }
+]

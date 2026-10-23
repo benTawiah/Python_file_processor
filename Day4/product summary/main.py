@@ -15,6 +15,7 @@ save_product_into_file(all_products)
 
 
 
+
 # Display product summary
 for product in new_products:
     print("\n--- Product ---")

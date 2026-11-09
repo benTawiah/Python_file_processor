@@ -5,13 +5,8 @@
         "stock": 7
     },
     {
-        "name": "Phone",
-        "price": 200.989,
-        "stock": 7
-    },
-    {
-        "name": "Clock",
-        "price": 9.0,
+        "name": "Pen",
+        "price": 2.0,
         "stock": 5
     }
 ]

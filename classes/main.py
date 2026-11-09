@@ -1,4 +1,4 @@
-from product import Inventory, Product
+from product import Inventory
 
 
 shop = Inventory()

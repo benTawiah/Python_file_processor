@@ -32,4 +32,10 @@ def test_remove():
     shop.remove("Shirt")
     assert len(shop.product_collect) == 0
     assert shop.find("Shirt") is None
+
+def test_duplicate_name():
+    shop=Inventory()
+    shop.add("Pen",5.5, 8)
+    with pytest.raises(ValueError):
+        shop.add("Pen", 5.5, 8)
     

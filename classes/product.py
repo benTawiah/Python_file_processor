@@ -42,6 +42,8 @@ class Inventory:
         self.product_collect =[]
         
     def add(self,name, price, stock):
+        if self.find(name) is not None:
+            raise ValueError("Product already exists.")
         product = Product(name, price, stock)
         self.product_collect.append(product)
         

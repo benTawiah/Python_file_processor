@@ -1,7 +1,7 @@
 import pytest
-from product import Product, Inventory
+#from product import Product, Inventory
 from db_inventory import DbInventory
-def test_valid_sale():
+""" def test_valid_sale():
     product = Product("Pen", 2, 5)    # arrange: a product with stock 5
     product.sell(2)                   # act: sell 2 units
     assert product.stock == 3         # assert: 5 - 2 should leave 3
@@ -38,7 +38,7 @@ def test_duplicate_name():
     shop=Inventory()
     shop.add("Pen",5.5, 8)
     with pytest.raises(ValueError):
-        shop.add("Pen", 5.5, 8)
+        shop.add("Pen", 5.5, 8) """
     
 
 
@@ -95,3 +95,41 @@ def test_empty_name_refused(shop):
 def test_remove_missing_product(shop):
     with pytest.raises(ValueError, match="Product not found"):
         shop.remove("Banana") """
+        
+        
+def test_sale():
+    shop = DbInventory(":memory:")
+    shop.add("Pen", 6.9, 9)
+    shop.sell("Pen", 2)
+    assert shop.find("Pen").stock == 7
+
+
+def test_oversized_sale():
+    shop = DbInventory(":memory:")
+    shop.add("Pen", 6.9, 9)
+    with pytest.raises(ValueError):
+        shop.sell("Pen", 100)
+    assert shop.find("Pen").stock == 9
+
+
+def test_missing_product():
+    shop = DbInventory(":memory:")
+    with pytest.raises(ValueError):
+        shop.sell("Cup", 1)
+
+
+def test_bad_quantity():
+    shop = DbInventory(":memory:")
+    shop.add("Pen", 4.6, 9)
+    with pytest.raises(ValueError):
+        shop.sell("Pen", 0)
+    with pytest.raises(ValueError):
+        shop.sell("Pen", -3)
+    assert shop.find("Pen").stock == 9
+
+
+def test_duplicate_name():
+    shop = DbInventory(":memory:")
+    shop.add("Pen", 3.6, 8)
+    with pytest.raises(ValueError):
+        shop.add("Pen", 3.6, 9)
